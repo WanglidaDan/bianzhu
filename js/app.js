@@ -173,6 +173,15 @@ function metaLine(song) {
   return [song.artist, song.album, song.year].filter(Boolean).join(" · ");
 }
 
+function appleMusicUrl(song) {
+  const term = [song.title, song.artist].filter(Boolean).join(" ");
+  return `https://music.apple.com/search?term=${encodeURIComponent(term)}`;
+}
+
+function appleMusicLink(song, label = "Apple Music") {
+  return `<a class="apple-link" href="${esc(appleMusicUrl(song))}" target="_blank" rel="noopener noreferrer"><span class="apple-mark" aria-hidden="true">♪</span>${esc(label)}<span aria-hidden="true">↗</span></a>`;
+}
+
 function cnNumber(n) {
   const digit = ["", "一", "二", "三", "四", "五", "六", "七", "八", "九"];
   if (n < 10) return digit[n];
@@ -247,6 +256,7 @@ function readView(motionClass) {
       <p class="lead">${esc(song.paragraphs[0])}</p>
       <div class="actions">
         ${saveButton(song)}
+        ${appleMusicLink(song, "在 Apple Music 打开")}
         <button class="link" type="button" data-go="now">阅读全文</button>
       </div>
       ${stepButtons()}
@@ -268,7 +278,7 @@ function nowView(motionClass) {
           <p class="meta">${esc(metaLine(song))}</p>
         </div>
       </div>
-      <div class="now-actions">${saveButton(song)}</div>
+      <div class="now-actions">${saveButton(song)}${appleMusicLink(song, "在 Apple Music 打开这首歌")}</div>
       <div class="essay">${essay}</div>
       ${stepButtons()}
     </div>
@@ -292,7 +302,7 @@ function indexView(motionClass) {
   return `<div class="${motionClass}">
     <header class="list-head">
       <h2>目录</h2>
-      <p>按一个晚上的顺序排了七则。可以从头听，也可以翻到某一则。播放是本地演示，界面上标为 <span class="keep">Apple Music</span>。</p>
+      <p>按一个晚上的顺序排了七则。可以从头翻阅，也可以打开歌曲故事。歌曲入口会跳转到 Apple Music 搜索；页面内的进度条仅作交互演示。</p>
     </header>
     <div class="rows">${rows}</div>
   </div>`;
@@ -343,23 +353,24 @@ function dock() {
     return `<footer class="dock dock-slim">
       <button class="play play-sm${on}" type="button" data-play aria-pressed="${playing}" aria-label="${esc(label)}">${icon}</button>
       <button class="slim-open" type="button" data-go="now">
-        <span class="slim-kicker">Apple Music · ${esc(playWord())}</span>
+        <span class="slim-kicker">本地演示 · ${esc(playWord())}</span>
         <span class="slim-title">${esc(song.title)}</span>
       </button>
+      ${appleMusicLink(song, "打开")}
     </footer>`;
   }
   return `<footer class="dock">
     <div class="transport">
       <button class="play${on}" type="button" data-play aria-pressed="${playing}" aria-label="${esc(label)}">${icon}</button>
       <div>
-        <div class="svc">Apple Music</div>
+        <div class="svc">本地播放演示</div>
         <div class="stat"><b data-state-word>${esc(playWord())}</b> · <span data-elapsed>${fmt(state.elapsed)}</span> / ${fmt(song.duration)}</div>
       </div>
     </div>
     <div class="scrub" role="slider" tabindex="0" aria-label="播放进度" aria-valuemin="0" aria-valuemax="${song.duration}" aria-valuenow="${Math.floor(state.elapsed)}" aria-valuetext="${fmt(state.elapsed)}">
       <div class="scrub-fill" data-fill></div>
     </div>
-    <p class="disclaimer">本地演示，没有连接音乐服务</p>
+    <div class="dock-bottom"><p class="disclaimer">播放进度为界面演示</p>${appleMusicLink(song, "Apple Music")}</div>
   </footer>`;
 }
 
@@ -451,7 +462,7 @@ function paintPlay() {
     node.textContent = playing ? " · 播放中" : "";
   });
   app.querySelectorAll(".slim-kicker").forEach((node) => {
-    node.textContent = `Apple Music · ${word}`;
+    node.textContent = `本地演示 · ${word}`;
   });
   paintProgress();
 }

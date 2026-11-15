@@ -1,0 +1,50 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {};
+	objectVersion = 56;
+	objects = {
+/* Begin PBXBuildFile section */
+A10000000000000000000001 /* BianzhuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20000000000000000000001 /* BianzhuApp.swift */; };
+A10000000000000000000002 /* Stories.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20000000000000000000002 /* Stories.swift */; };
+A10000000000000000000003 /* MusicService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20000000000000000000003 /* MusicService.swift */; };
+A10000000000000000000004 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20000000000000000000004 /* Components.swift */; };
+/* End PBXBuildFile section */
+/* Begin PBXFileReference section */
+B20000000000000000000001 /* BianzhuApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BianzhuApp.swift; sourceTree = "<group>"; };
+B20000000000000000000002 /* Stories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stories.swift; sourceTree = "<group>"; };
+B20000000000000000000003 /* MusicService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicService.swift; sourceTree = "<group>"; };
+B20000000000000000000004 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
+B20000000000000000000005 /* Bianzhu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bianzhu.app; sourceTree = BUILT_PRODUCTS_DIR; };
+B20000000000000000000006 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+/* Begin PBXFrameworksBuildPhase section */
+C30000000000000000000001 /* Frameworks */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXFrameworksBuildPhase section */
+/* Begin PBXGroup section */
+D40000000000000000000001 = {isa = PBXGroup; children = (D40000000000000000000002 /* Bianzhu */, D40000000000000000000003 /* Products */, ); sourceTree = "<group>"; };
+D40000000000000000000002 /* Bianzhu */ = {isa = PBXGroup; path = Bianzhu; sourceTree = "<group>"; children = (B20000000000000000000001 /* BianzhuApp.swift */, B20000000000000000000002 /* Stories.swift */, B20000000000000000000003 /* MusicService.swift */, B20000000000000000000004 /* Components.swift */, B20000000000000000000006 /* Info.plist */, ); };
+D40000000000000000000003 /* Products */ = {isa = PBXGroup; name = Products; sourceTree = "<group>"; children = (B20000000000000000000005 /* Bianzhu.app */, ); };
+/* End PBXGroup section */
+/* Begin PBXSourcesBuildPhase section */
+E50000000000000000000001 /* Sources */ = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (A10000000000000000000001 /* BianzhuApp.swift in Sources */, A10000000000000000000002 /* Stories.swift in Sources */, A10000000000000000000003 /* MusicService.swift in Sources */, A10000000000000000000004 /* Components.swift in Sources */, ); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXSourcesBuildPhase section */
+/* Begin PBXNativeTarget section */
+F60000000000000000000001 /* Bianzhu */ = {isa = PBXNativeTarget; buildConfigurationList = G70000000000000000000002 /* Build configuration list for PBXNativeTarget "Bianzhu" */; buildPhases = (E50000000000000000000001 /* Sources */, C30000000000000000000001 /* Frameworks */, ); buildRules = (); dependencies = (); name = Bianzhu; productName = Bianzhu; productReference = B20000000000000000000005 /* Bianzhu.app */; productType = "com.apple.product-type.application"; };
+/* End PBXNativeTarget section */
+/* Begin PBXProject section */
+F60000000000000000000002 /* Project object */ = {isa = PBXProject; attributes = {BuildIndependentTargetsInParallel = 1; LastUpgradeCheck = 1600; TargetAttributes = {F60000000000000000000001 = {CreatedOnToolsVersion = 16.0; }; }; }; buildConfigurationList = G70000000000000000000001 /* Build configuration list for PBXProject "Bianzhu" */; compatibilityVersion = "Xcode 14.0"; developmentRegion = zh_Hans; hasScannedForEncodings = 0; knownRegions = (en, Base, zh_Hans, ); mainGroup = D40000000000000000000001; productRefGroup = D40000000000000000000003 /* Products */, projectDirPath = ""; projectRoot = ""; targets = (F60000000000000000000001 /* Bianzhu */, ); };
+/* End PBXProject section */
+/* Begin XCBuildConfiguration section */
+G70000000000000000000003 /* Debug project */ = {isa = XCBuildConfiguration; buildSettings = {ALWAYS_SEARCH_USER_PATHS = NO; CLANG_ENABLE_MODULES = YES; CLANG_ENABLE_OBJC_ARC = YES; IPHONEOS_DEPLOYMENT_TARGET = 17.0; SDKROOT = iphoneos; SWIFT_VERSION = 5.0; }; name = Debug; };
+G70000000000000000000004 /* Release project */ = {isa = XCBuildConfiguration; buildSettings = {ALWAYS_SEARCH_USER_PATHS = NO; CLANG_ENABLE_MODULES = YES; CLANG_ENABLE_OBJC_ARC = YES; IPHONEOS_DEPLOYMENT_TARGET = 17.0; SDKROOT = iphoneos; SWIFT_VERSION = 5.0; }; name = Release; };
+G70000000000000000000005 /* Debug app */ = {isa = XCBuildConfiguration; buildSettings = {CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 1; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = Bianzhu/Info.plist; IPHONEOS_DEPLOYMENT_TARGET = 17.0; MARKETING_VERSION = 1.0; PRODUCT_BUNDLE_IDENTIFIER = work.lidawang.bianzhu; PRODUCT_NAME = "$(TARGET_NAME)"; SWIFT_EMIT_LOC_STRINGS = YES; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = "1,2"; }; name = Debug; };
+G70000000000000000000006 /* Release app */ = {isa = XCBuildConfiguration; buildSettings = {CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 1; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = Bianzhu/Info.plist; IPHONEOS_DEPLOYMENT_TARGET = 17.0; MARKETING_VERSION = 1.0; PRODUCT_BUNDLE_IDENTIFIER = work.lidawang.bianzhu; PRODUCT_NAME = "$(TARGET_NAME)"; SWIFT_EMIT_LOC_STRINGS = YES; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = "1,2"; }; name = Release; };
+/* End XCBuildConfiguration section */
+/* Begin XCConfigurationList section */
+G70000000000000000000001 /* Build configuration list for PBXProject "Bianzhu" */ = {isa = XCConfigurationList; buildConfigurations = (G70000000000000000000003 /* Debug project */, G70000000000000000000004 /* Release project */, ); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+G70000000000000000000002 /* Build configuration list for PBXNativeTarget "Bianzhu" */ = {isa = XCConfigurationList; buildConfigurations = (G70000000000000000000005 /* Debug app */, G70000000000000000000006 /* Release app */, ); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+/* End XCConfigurationList section */
+	};
+	rootObject = F60000000000000000000002 /* Project object */;
+}

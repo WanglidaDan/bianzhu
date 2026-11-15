@@ -320,6 +320,21 @@ button {
   font-size: 14.5px;
 }
 
+.apple-link {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  color: var(--pine);
+  text-decoration: none;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.apple-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+.apple-mark { font-size: 17px; line-height: 1; }
+
 .link, .textlink { color: var(--pine); }
 
 .save { color: var(--ink); }
@@ -412,7 +427,7 @@ button {
 .now-head .kicker { margin-bottom: 4px; }
 .now-head .meta { margin-top: 4px; }
 
-.now-actions { margin-top: 14px; }
+.now-actions { margin-top: 14px; display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
 
 .list-head h2 {
   margin: 8px 0 0;
@@ -647,6 +662,22 @@ button {
   color: var(--muted);
 }
 
+.dock-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 2px;
+}
+
+.dock-bottom .apple-link { min-height: 32px; font-size: 12px; }
+.dock-bottom .apple-mark { font-size: 15px; }
+.dock-slim > .apple-link { min-height: 40px; font-size: 12px; }
+.dock-slim > .apple-link .apple-mark { font-size: 15px; }
+
+.actions { gap: 8px; flex-wrap: wrap; }
+.actions .apple-link { font-size: 12px; }
+
 .dock-slim {
   display: grid;
   grid-template-columns: 36px 1fr;
@@ -707,6 +738,15 @@ button {
     margin: max(16px, calc((100dvh - 860px) / 2)) auto;
     box-shadow: 0 0 0 1px rgba(28, 25, 22, 0.08);
   }
+}
+
+@media (max-width: 380px) {
+  .sheet-body { padding-left: 16px; padding-right: 16px; }
+  .actions { column-gap: 6px; }
+  .actions .apple-link { font-size: 11px; gap: 4px; }
+  .save, .link { font-size: 13px; }
+  .dock-bottom { gap: 6px; }
+  .disclaimer { font-size: 11px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
